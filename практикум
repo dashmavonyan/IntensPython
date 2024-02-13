@@ -1,0 +1,83 @@
+вариант 4 
+
+
+C++:
+
+№2
+#include <iostream>
+using namespace std;
+
+int main () {
+    int x;
+    do {
+        cout << "Введите трехзначное число x (100-999): ";
+        cin >> x;
+    }while (x < 100 || x > 999);
+    
+    int last_digit = x % 10;
+    int two_digit_number = x / 10;
+    int reversed_two_digit_number = (two_digit_number % 10) * 10 + two_digit_number / 10;
+    int p = (reversed_two_digit_number * 10) + last_digit;
+    
+    cout << "Значение числа p: " << p << endl;
+    
+    return 0;
+}
+
+
+№4
+#include <iostream>
+using namespace std;
+
+int main () {
+    int f, s, number;
+    cout << "Введите первый член арифметической прогрессии f: ";
+    cin >> f;
+    cout << "Введите шаг арифметической прогрессии s: ";
+    cin >> s;
+    cout << "Введите число для проверки: ";
+    cin >> number;
+    
+    if ((number - f) % s == 0) {
+        cout << "Число " << number << "является членом данной арифметической прогрессии" << endl;
+    } else {
+        cout << "Число " << number << "не является числом данной арифметической прогрессии" << endl;
+    }
+    
+    return 0;
+}
+
+
+
+
+
+Python:
+
+№5
+import random
+
+array = [random.randint(-100, 100) for _ in range(20)]
+print("Исходный массив:")
+print(array)
+
+new_array = sorted(array, key=lambda x: (x < 0, x))
+print("Измененный массив:")
+print(new_array)
+
+
+№6
+def count_digits(number):
+    return len(str(number))
+
+number1 = 12345
+number2 = 9876543
+
+count1 = count_digits(number1)
+count2 = count_digits(number2)
+
+if count1 > count2:
+    print(f"В числе {number1} больше цифр, чем в числе {number2}")
+elif count2 > count1:
+    print(f"В числе {number2} больше цифр, чем в числе {number1}")
+else:
+    print("Оба числа содержат одинаковое количество цифр")
